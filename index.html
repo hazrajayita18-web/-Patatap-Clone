@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patatap Clone</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Howler.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+    <!-- Paper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js"></script>
+
+    <!-- PaperScript -->
+    <script type="text/paperscript" canvas="myCanvas">
+
+        var keyData = {
+            a: { sound: new Howl({ src: ['sounds/a.mpeg'] }), color: 'red' },
+            s: { sound: new Howl({ src: ['sounds/s.mpeg'] }), color: 'orange' },
+            d: { sound: new Howl({ src: ['sounds/d.mpeg'] }), color: 'yellow' },
+            f: { sound: new Howl({ src: ['sounds/f.mpeg'] }), color: 'green' },
+            g: { sound: new Howl({ src: ['sounds/g.mpeg'] }), color: 'blue' },
+            h: { sound: new Howl({ src: ['sounds/h.mpeg'] }), color: 'purple' },
+            j: { sound: new Howl({ src: ['sounds/j.mpeg'] }), color: 'pink' },
+            k: { sound: new Howl({ src: ['sounds/k.mpeg'] }), color: 'cyan' },
+            k: { sound: new Howl({ src: ['sounds/k.mpeg'] }), color: 'cyan' },
+
+        };
+
+        var circles = [];
+
+        function onKeyDown(event) {
+            if (keyData[event.key]) {
+
+                keyData[event.key].sound.play();
+
+                var point = Point.random() * view.size;
+                var circle = new Path.Circle(point, 500);
+                circle.fillColor = keyData[event.key].color;
+
+                circles.push(circle);
+            }
+        }
+
+        function onFrame(event) {
+            for (var i = 0; i < circles.length; i++) {
+                circles[i].fillColor.hue += 1;
+                circles[i].scale(0.92);
+
+                if (circles[i].area < 1) {
+                    circles[i].remove();
+                    circles.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <canvas id="myCanvas" resize></canvas>
+</body>
+</html>
