@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🎶 Patatap Clone
 
 An interactive web application where keyboard keys trigger sounds and colorful animations.
