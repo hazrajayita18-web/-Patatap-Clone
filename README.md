@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎶 Patatap Clone
 
 An interactive web application where keyboard keys trigger sounds and colorful animations.
@@ -28,3 +29,6 @@ Jayita Hazra
 
 
 ## 🌍 Link of the Project
+=======
+# -Patatap-Clone
+>>>>>>> 31771393e6ca60c85462c397803924c7333a8967
