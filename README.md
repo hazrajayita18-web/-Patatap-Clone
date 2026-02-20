@@ -29,6 +29,7 @@ Jayita Hazra
 
 
 ## 🌍 Link of the Project
-=======
+(https://patatap-clone-weld.vercel.app/)
+
 # -Patatap-Clone
 >>>>>>> 31771393e6ca60c85462c397803924c7333a8967
